@@ -16,6 +16,27 @@ SQLAlchemy = ">=1.3.0"
 tz = ["python-dateutil"]
 
 [[package]]
+name = "APIFlask"
+version = "1.1.3"
+description = "A lightweight web API framework based on Flask and marshmallow-code projects."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+apispec = ">=4.2.0"
+flask = ">=1.1.0,<2.2.0"
+flask-httpauth = ">=4"
+flask-marshmallow = ">=0.12.0"
+typing-extensions = {version = "*", markers = "python_version < \"3.8\""}
+webargs = ">=6"
+
+[package.extras]
+async = ["asgiref (>=3.2)"]
+dotenv = ["python-dotenv"]
+yaml = ["pyyaml"]
+
+[[package]]
 name = "apispec"
 version = "5.2.2"
 description = "A pluggable API specification generator. Currently supports the OpenAPI Specification (f.k.a. the Swagger specification)."
@@ -50,7 +71,7 @@ tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy 
 name = "autoflake"
 version = "1.5.3"
 description = "Removes unused imports and unused variables"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -74,7 +95,7 @@ typecheck = ["mypy"]
 name = "black"
 version = "22.8.0"
 description = "The uncompromising code formatter."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6.2"
 
@@ -115,7 +136,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "Flask"
-version = "2.2.2"
+version = "2.1.3"
 description = "A simple framework for building complex web applications."
 category = "main"
 optional = false
@@ -126,7 +147,7 @@ click = ">=8.0"
 importlib-metadata = {version = ">=3.6.0", markers = "python_version < \"3.10\""}
 itsdangerous = ">=2.0"
 Jinja2 = ">=3.0"
-Werkzeug = ">=2.2.2"
+Werkzeug = ">=2.0"
 
 [package.extras]
 async = ["asgiref (>=3.2)"]
@@ -157,6 +178,37 @@ python-versions = "*"
 [package.dependencies]
 Flask = ">=0.9"
 Six = "*"
+
+[[package]]
+name = "Flask-HTTPAuth"
+version = "4.7.0"
+description = "HTTP authentication for Flask routes"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+flask = "*"
+
+[[package]]
+name = "flask-marshmallow"
+version = "0.14.0"
+description = "Flask + marshmallow for beautiful APIs"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = "*"
+marshmallow = ">=2.0.0"
+six = ">=1.9.0"
+
+[package.extras]
+dev = ["flake8 (==3.8.3)", "flake8-bugbear (==20.1.4)", "flask-sqlalchemy", "marshmallow-sqlalchemy (>=0.13.0)", "marshmallow-sqlalchemy (>=0.13.0,<0.19.0)", "mock", "pre-commit (>=2.4,<3.0)", "pytest", "tox"]
+docs = ["Sphinx (==3.2.1)", "marshmallow-sqlalchemy (>=0.13.0)", "sphinx-issues (==1.2.0)"]
+lint = ["flake8 (==3.8.3)", "flake8-bugbear (==20.1.4)", "pre-commit (>=2.4,<3.0)"]
+sqlalchemy = ["flask-sqlalchemy", "marshmallow-sqlalchemy (>=0.13.0)", "marshmallow-sqlalchemy (>=0.13.0,<0.19.0)"]
+tests = ["flask-sqlalchemy", "marshmallow-sqlalchemy (>=0.13.0)", "marshmallow-sqlalchemy (>=0.13.0,<0.19.0)", "mock", "pytest"]
 
 [[package]]
 name = "Flask-SQLAlchemy"
@@ -225,7 +277,7 @@ python-versions = "*"
 name = "isort"
 version = "5.10.1"
 description = "A Python utility / library to sort Python imports."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6.1,<4.0"
 
@@ -303,7 +355,7 @@ tests = ["pytest", "pytz", "simplejson"]
 name = "mypy"
 version = "0.971"
 description = "Optional static typing for Python"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -322,7 +374,7 @@ reports = ["lxml"]
 name = "mypy-extensions"
 version = "0.4.3"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
-category = "main"
+category = "dev"
 optional = false
 python-versions = "*"
 
@@ -355,7 +407,7 @@ totp = ["cryptography"]
 name = "pathspec"
 version = "0.10.1"
 description = "Utility library for gitignore style pattern matching of file paths."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -363,7 +415,7 @@ python-versions = ">=3.7"
 name = "platformdirs"
 version = "2.5.2"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -398,7 +450,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "pyflakes"
 version = "2.5.0"
 description = "passive checker of Python programs"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -501,7 +553,7 @@ sqlcipher = ["sqlcipher3_binary"]
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -509,7 +561,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -517,7 +569,7 @@ python-versions = ">=3.7"
 name = "typed-ast"
 version = "1.5.4"
 description = "a fork of Python 2 and 3 ast modules with type comment support"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.6"
 
@@ -577,12 +629,16 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "71b5ba689171283f43979fe45323eeeaeaa7119976f6941314f893e036a612a5"
+content-hash = "b211fe59414bdd096b35ba1f49cea529027c5040006efa1d8e1aa0c6b6304404"
 
 [metadata.files]
 alembic = [
     {file = "alembic-1.8.1-py3-none-any.whl", hash = "sha256:0a024d7f2de88d738d7395ff866997314c837be6104e90c5724350313dee4da4"},
     {file = "alembic-1.8.1.tar.gz", hash = "sha256:cd0b5e45b14b706426b833f06369b9a6d5ee03f826ec3238723ce8caaf6e5ffa"},
+]
+APIFlask = [
+    {file = "APIFlask-1.1.3-py3-none-any.whl", hash = "sha256:2cedff6bb4ebfa86373ecd1200550eb9ded12a5d04526fc681e929f3423aa6da"},
+    {file = "APIFlask-1.1.3.tar.gz", hash = "sha256:d09a43c8e7a8a495c8b948e6634a447f1685064136b13f5ca6d50fddcd9da0b8"},
 ]
 apispec = [
     {file = "apispec-5.2.2-py3-none-any.whl", hash = "sha256:f5f0d6b452c3e4a0e0922dce8815fac89dc4dbc758acef21fb9e01584d6602a5"},
@@ -644,8 +700,8 @@ colorama = [
     {file = "colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
 ]
 Flask = [
-    {file = "Flask-2.2.2-py3-none-any.whl", hash = "sha256:b9c46cc36662a7949f34b52d8ec7bb59c0d74ba08ba6cb9ce9adc1d8676d9526"},
-    {file = "Flask-2.2.2.tar.gz", hash = "sha256:642c450d19c4ad482f96729bd2a8f6d32554aa1e231f4f6b4e7e5264b16cca2b"},
+    {file = "Flask-2.1.3-py3-none-any.whl", hash = "sha256:9013281a7402ad527f8fd56375164f3aa021ecfaff89bfe3825346c24f87e04c"},
+    {file = "Flask-2.1.3.tar.gz", hash = "sha256:15972e5017df0575c3d6c090ba168b6db90259e620ac8d7ea813a396bad5b6cb"},
 ]
 flask-apispec = [
     {file = "flask-apispec-0.11.4.tar.gz", hash = "sha256:9a6fedd3a06510a8a19340df676393b336b4ba9d5c159cbb304b62672e3115da"},
@@ -654,6 +710,14 @@ flask-apispec = [
 Flask-Cors = [
     {file = "Flask-Cors-3.0.10.tar.gz", hash = "sha256:b60839393f3b84a0f3746f6cdca56c1ad7426aa738b70d6c61375857823181de"},
     {file = "Flask_Cors-3.0.10-py2.py3-none-any.whl", hash = "sha256:74efc975af1194fc7891ff5cd85b0f7478be4f7f59fe158102e91abb72bb4438"},
+]
+Flask-HTTPAuth = [
+    {file = "Flask-HTTPAuth-4.7.0.tar.gz", hash = "sha256:f7199e7bad20d5b68b3f0b62bddfca7637c55087e9d02f605ae26e0de479fd94"},
+    {file = "Flask_HTTPAuth-4.7.0-py3-none-any.whl", hash = "sha256:a237e4c8ec1d339298a0eb88e5af2ca36117949b621631649462800e57e1ba37"},
+]
+flask-marshmallow = [
+    {file = "flask-marshmallow-0.14.0.tar.gz", hash = "sha256:bd01a6372cbe50e36f205cfff0fc5dab0b7b662c4c8b2c4fc06a3151b2950950"},
+    {file = "flask_marshmallow-0.14.0-py2.py3-none-any.whl", hash = "sha256:2adcd782b5a4a6c5ae3c96701f320d8ca6997995a52b2661093c56cc3ed24754"},
 ]
 Flask-SQLAlchemy = [
     {file = "Flask-SQLAlchemy-2.5.1.tar.gz", hash = "sha256:2bda44b43e7cacb15d4e05ff3cc1f8bc97936cc464623424102bfc2c35e95912"},
