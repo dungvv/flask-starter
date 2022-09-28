@@ -18,6 +18,10 @@
 - Format and import: `sh scripts/format-import.sh`
 - Lint: `sh scripts/lint.sh`
 
+## Database migration
+- [Alembic](https://alembic.sqlalchemy.org/)
+- Auto generate migration: `alembic revision --autogenerate -m "migration message"`
+
 ## Testing
 - Pytest auto discover: https://docs.pytest.org/en/7.1.x/explanation/goodpractices.html#test-discovery
 - File name for testing: `test_*.py` or `*_test.py`
