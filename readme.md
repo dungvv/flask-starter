@@ -29,5 +29,4 @@
 - Write test class with name like: `Test*` with test method like `test*`
 
 ## Deploying with gunicorn + gevent
-
-## Deploying with bjorne
+- TBD
